@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { loginUser } from "../utils/axios/userAPIs";
 import { useNavigate } from "react-router";
 import { useUserContext } from "../utils/useUserContext";
@@ -8,6 +8,7 @@ const Login = () => {
   const token = localStorage.getItem("token");
 
   const [loginData, setLoginData] = useState({
+    // email: '',
     userName: "",
     password: "",
   });
@@ -23,7 +24,7 @@ const Login = () => {
   return (
     <div>
       <div>
-        <h1>SnapShare</h1>
+        <h1>Instaclone</h1>
         <form>
           <input
             placeholder="Username or email"
@@ -50,19 +51,11 @@ const Login = () => {
             Log in
           </button>
         </form>
-
-        <h1>
-          Forgot password?
-        </h1>
       </div>
       <div>
         <h1>
           Don't have an account?{" "}
-          <span
-            onClick={() => navigate("/register")}
-          >
-            Sign up
-          </span>
+          <span onClick={() => navigate("/register")}>Sign up</span>
         </h1>
       </div>
     </div>

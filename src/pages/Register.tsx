@@ -1,9 +1,10 @@
-import { useState } from "react";
+import {useState } from "react";
 import { useNavigate } from "react-router";
 import { registerNewUser } from "../utils/axios/userAPIs";
 
 const Register = () => {
   const navigate = useNavigate();
+
   const [registrationData, setRegistrationData] = useState({
     email: "",
     fullName: "",
@@ -21,9 +22,7 @@ const Register = () => {
     <div>
       <div>
         <h1>SnapShare</h1>
-        <h2>
-          Sign up to see photos and videos from your friends.
-        </h2>
+        <h2>Sign up to see photos and videos from your friends.</h2>
         <div>
           <form>
             <input
@@ -71,13 +70,9 @@ const Register = () => {
         </div>
       </div>
       <div>
-        <h1 className="text-sm">
+        <h1>
           Have an account?{" "}
-          <span
-            onClick={() => navigate("/login")}
-          >
-            Log in
-          </span>
+          <span onClick={() => navigate("/login")}>Log in</span>
         </h1>
       </div>
     </div>

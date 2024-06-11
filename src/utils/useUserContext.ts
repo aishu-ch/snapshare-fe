@@ -8,5 +8,6 @@ export const useUserContext = () => {
   if (!context) {
     throw Error("Context must be used within the appropriate provider.");
   }
+
   return context;
 };

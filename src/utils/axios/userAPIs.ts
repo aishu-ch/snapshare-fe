@@ -31,6 +31,8 @@ export const registerNewUser = async (
 };
 
 export const loginUser = async (userName: string, password: string) => {
+  console.log(userName, password);
+  console.log(`${baseURL}${userURL}/login`);
   try {
     await axios
       .post(`${baseURL}${userURL}/login`, {

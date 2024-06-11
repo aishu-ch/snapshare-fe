@@ -1,17 +1,19 @@
-import {useEffect, useState} from 'react'
-import Navbar from '../components/Navbar'
-import Post from '../components/Post'
-import { checkIfValidToken } from '../utils/verifyToken'
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import { checkIfValidToken } from "../utils/verifyToken";
 
 const HomeFeed = () => {
-const [post, setPost] = useState([])
+  const [post, setPost] = useState([]);
+
+  useEffect(() => {
+    checkIfValidToken();
+  }, []);
 
   return (
-      <div>
+    <div>
       <Navbar />
-      </div>
-  )
+    </div>
+  );
+};
 
-}
-
-export default HomeFeed
+export default HomeFeed;
