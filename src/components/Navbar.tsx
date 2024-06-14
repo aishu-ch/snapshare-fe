@@ -18,30 +18,39 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>
-        <h1>SnapShare</h1>
+      <nav className="h-screen relative z-50 bg-white border-r border-gray-300 sticky top-0 w-[72px] md:w-fit">
+        <h1 className="text-4xl px-12 mt-4 invisible md:visible">SnapShare</h1>
         <div>
-          <Link to={"/"}>
+          <Link
+            to={"/"}
+            className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full"
+          >
             <HomeSelected />
-            <h1>Home</h1>
+            <h1 className="invisible md:visible">Home</h1>
           </Link>
-          <ul>
+          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer">
             <SearchBtnIcon />
-            <h1>Search</h1>
+            <h1 className="invisible md:visible">Search</h1>
           </ul>
-          <Link to={""}>
+          <Link
+            to={""}
+            className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full"
+          >
             <ExploreUnselected />
-            <h1>Explore</h1>
+            <h1 className="invisible md:visible">Explore</h1>
           </Link>
-          <ul>
+          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full">
             <NotificationsUnselected />
-            <h1>Notifications</h1>
+            <h1 className="invisible md:visible">Notifications</h1>
           </ul>
-          <ul>
+          <ul className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full">
             <CreateUnselected />
-            <h1>Create</h1>
+            <h1 className="invisible md:visible">Create</h1>
           </ul>
-          <ul onClick={() => setOpenMoreMenu(!openMoreMenu)}>
+          <ul
+            className="pl-2 flex gap-4 py-2 mb-auto cursor-pointer hover:bg-gray-50 hover:rounded-full relative"
+            onClick={() => setOpenMoreMenu(!openMoreMenu)}
+          >
             <MoreModal isOpen={openMoreMenu} />
             <MenuIcon />
             <h1 className="invisible md:visible">More</h1>

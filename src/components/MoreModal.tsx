@@ -13,12 +13,18 @@ const MoreModal = ({ isOpen }: Props) => {
   return (
     <div>
       {isOpen ? (
-        <div>
-          <ul onClick={() => navigate("/accounts/edit")}>
+        <div className="w-full h-fit bg-white absolute top-12 rounded-md shadow text-[14pt]">
+          <ul
+            className="pl-2 py-2 flex gap-4 hover:bg-gray-50 hover:cursor-pointer border-b"
+            onClick={() => navigate("/accounts/edit")}
+          >
             <h1>Edit Profile</h1>
           </ul>
-          <ul onClick={logout}>
-            <h1>Log out</h1>
+          <ul
+            className="pl-2 py-2 flex gap-4 hover:bg-gray-50 hover:cursor-pointer"
+            onClick={logout}
+          >
+            <h1 className="invisible md:visible">Log out</h1>
           </ul>
         </div>
       ) : null}
