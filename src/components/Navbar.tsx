@@ -40,7 +40,6 @@ const Navbar = () => {
             <h1 className="invisible md:visible">Home</h1>
           </Link>
           <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer">
-          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer">
             <SearchBtnIcon />
             <h1 className="invisible md:visible">Search</h1>
           </ul>
