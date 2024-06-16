@@ -38,7 +38,6 @@ const Profile = () => {
   useEffect(() => {
     getUserbyUsername(username)
       .then((res) => {
-        console.log(res)
         setUserData(res);
         setPost(res.posts);
         setFollowers(res.followers);
@@ -229,7 +228,7 @@ const Profile = () => {
         </div>
         <div className="grid grid-cols-3">
           {post.map((posts) => {
-            return <Post/>;
+            return <Post isOnFeed={false} post={posts} />;
           })}
         </div>
       </div>
