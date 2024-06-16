@@ -87,6 +87,7 @@ export const editPost = async (postId: any, caption: string) => {
 };
 
 export const getPostById = async (postId: any) => {
+  console.log(postId)
   try {
     const getPost = await axios.get(`${baseURL}${postURL}/post/${postId}`);
     return getPost.data;

@@ -44,7 +44,7 @@ const Navbar = () => {
             <h1 className="invisible md:visible">Search</h1>
           </ul>
           <Link
-            to={""}
+            to={"/explore"}
             className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full"
           >
             <ExploreUnselected />
