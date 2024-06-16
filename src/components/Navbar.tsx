@@ -56,10 +56,7 @@ const Navbar = () => {
               Notifications
             </h1>
           </ul>
-          <ul
-            className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <ul className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full" onClick={() => setIsOpen(!isOpen)}>
             <CreateUnselected />
             <h1 className="invisible md:visible">Create</h1>
           </ul>
@@ -73,10 +70,7 @@ const Navbar = () => {
             />
             <h1 className="invisible md:visible">{profile.userName}</h1>
           </Link>
-          <ul
-            className="pl-2 flex gap-4 py-2 mb-auto cursor-pointer hover:bg-gray-50 hover:rounded-full relative"
-            onClick={() => setOpenMoreMenu(!openMoreMenu)}
-          >
+          <ul className="pl-2 flex gap-4 py-2 mb-auto cursor-pointer hover:bg-gray-50 hover:rounded-full relative" onClick={() => setOpenMoreMenu(!openMoreMenu)}>
             <MoreModal isOpen={openMoreMenu} />
             <MenuIcon />
             <h1 className="invisible md:visible">More</h1>
