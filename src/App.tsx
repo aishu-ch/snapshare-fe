@@ -28,6 +28,7 @@ function App(): any {
           />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/explore" element={<Explore />} />
+
           <Route path="/post/:postid" element={<SinglePost />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
