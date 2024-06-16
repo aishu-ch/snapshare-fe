@@ -4,10 +4,7 @@ import HomeFeed from "./pages/HomeFeed";
 import Login from "./pages/Login";
 import { useUserContext } from "./utils/useUserContext";
 import Profile from "./pages/Profile";
-<<<<<<< HEAD
 import Explore from "./pages/Explore";
-=======
->>>>>>> 4f2141ad54fad770927019b5ff32a0e0c49a5ff1
 import SinglePost from "./pages/SinglePost";
 
 function App(): any {
