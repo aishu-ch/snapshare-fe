@@ -30,10 +30,8 @@ function App(): any {
             element={!user ? <Login /> : <Navigate to="/" />}
           />
           <Route path="/profile/:username" element={<Profile />} />
-<<<<<<< HEAD
           <Route path="/explore" element={<Explore />} />
-=======
->>>>>>> 4f2141ad54fad770927019b5ff32a0e0c49a5ff1
+
           <Route path="/post/:postid" element={<SinglePost />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

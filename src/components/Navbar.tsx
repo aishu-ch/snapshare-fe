@@ -57,6 +57,7 @@ const Navbar = () => {
               Notifications
             </h1>
           </ul>
+          <ul className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full">
           <ul
             className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full"
             onClick={() => setIsOpen(!isOpen)}
