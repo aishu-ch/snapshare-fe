@@ -82,9 +82,6 @@ const Navbar = () => {
           <ul></ul>
                  </div>
       </nav>
-      <div className="relative">
-        <Search />
-      </div>
     </>
   );
 };
