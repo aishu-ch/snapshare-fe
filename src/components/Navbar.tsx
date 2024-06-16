@@ -36,14 +36,12 @@ const Navbar = () => {
             <HomeSelected />
             <h1 className="invisible md:visible">Home</h1>
           </Link>
-          <ul
-            className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer"
-          >
+          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer">
             <SearchBtnIcon />
             <h1 className="invisible md:visible">Search</h1>
           </ul>
           <Link
-            to={""}
+            to={"/explore"}
             className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full"
           >
             <ExploreUnselected />
@@ -55,9 +53,7 @@ const Navbar = () => {
               Notifications
             </h1>
           </ul>
-          <ul
-            className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full"
-          >
+          <ul className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full">
             <CreateUnselected />
             <h1 className="invisible md:visible">Create</h1>
           </ul>
@@ -80,7 +76,7 @@ const Navbar = () => {
             <h1 className="invisible md:visible">More</h1>
           </ul>
           <ul></ul>
-                 </div>
+        </div>
       </nav>
     </>
   );
