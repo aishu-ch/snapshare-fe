@@ -25,6 +25,7 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [openMoreMenu, setOpenMoreMenu] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <>
@@ -39,7 +40,7 @@ const Navbar = () => {
             <HomeSelected />
             <h1 className="invisible md:visible">Home</h1>
           </Link>
-          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer">
+          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer" onClick={() => setOpenSearch(!openSearch)}>
             <SearchBtnIcon />
             <h1 className="invisible md:visible">Search</h1>
           </ul>
@@ -77,6 +78,9 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <div className="relative">
+        <Search isOpen={openSearch} />
+      </div>
     </>
   );
 };

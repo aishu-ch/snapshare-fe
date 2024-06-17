@@ -26,7 +26,7 @@ const Login = () => {
         <h1 className="text-center text-3xl my-4 py-6">SnapShare</h1>
         <form className="flex flex-col gap-4">
           <input
-            placeholder="Username or email"
+            placeholder="Username"
             className="bg-gray-50 mx-8 py-1 placeholder:text-xs focus:outline-1 focus:outline-gray-400 placeholder:text-gray-400 border rounded-sm p-2"
             type="text"
             name="userName"
