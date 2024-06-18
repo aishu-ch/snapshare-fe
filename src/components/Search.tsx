@@ -4,9 +4,10 @@ import SearchInput from "./SearchInput";
 
 type Props = {
   isOpen: boolean;
+  setOpenSearch: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Search = ({ isOpen }: Props) => {
+const Search = ({ isOpen, setOpenSearch }: Props) => {
   const [search, setSearch] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -21,7 +22,12 @@ const Search = ({ isOpen }: Props) => {
       {isOpen ? (
         <div className="border-r absolute w-[400px] h-screen bg-white rounded-r-2xl">
           <div className="grid grid-rows-2">
-            <h1 className="font-semibold text-2xl pt-6 pl-6">Search</h1>
+            <h1 className="font-semibold text-2xl pt-6 pl-6">
+              Search{" "}
+              <span className="absolute font-semibold text-2xl right-3 hover:text-red-500 hover:cursor-pointer" onClick={() => setOpenSearch(false)}>
+                X
+              </span>
+            </h1>
             <div className="px-6 pt-3 border-b relative">
               <SearchInput onSearch={handleSearch} />
             </div>

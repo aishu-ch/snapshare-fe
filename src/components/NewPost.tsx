@@ -4,9 +4,10 @@ import { createNewPost } from "../utils/axios/postAPIs";
 
 type Props = {
   isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NewPost = ({ isOpen }: Props) => {
+const NewPost = ({ isOpen, setIsOpen }: Props) => {
   const [img, setImg] = useState("");
   const [addCaption, setAddCaption] = useState(false);
   const [caption, setCaption] = useState("");
@@ -22,6 +23,9 @@ const NewPost = ({ isOpen }: Props) => {
       ) : (
         <h1 className="font-bold text-center py-2 border-b">
           Create a new post
+          <span className="absolute font-bold right-3 hover:text-red-500 hover:cursor-pointer" onClick={() => setIsOpen(false)}>
+            X
+          </span>
         </h1>
       )}
       <div className="h-full flex px-4">
