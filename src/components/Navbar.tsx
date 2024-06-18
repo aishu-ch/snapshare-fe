@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <nav className="h-screen relative z-50 bg-white border-r border-gray-300 sticky top-0 w-[72px] md:w-fit">
         <h1 className="text-4xl px-12 mt-4 invisible md:visible">SnapShare</h1>
-        <NewPost isOpen={isOpen} />
+        <NewPost isOpen={isOpen} setIsOpen={setIsOpen}/>
         <div className="text-xl px-4 mx-auto h-full pt-8">
           <Link
             to={"/"}
@@ -78,8 +78,8 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <div className="relative">
-        <Search isOpen={openSearch} />
+      <div className="relative"> 
+        <Search isOpen={openSearch} setOpenSearch={setOpenSearch}/>
       </div>
     </>
   );
