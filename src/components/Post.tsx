@@ -39,7 +39,7 @@ const Post = ({ isOnFeed, post }: Props) => {
       .catch((err) => console.log(err));
     if (commentsRefresh) {
       getPostComments(post._id).then((res) => {
-        console.log("getPostComments: ", res);
+        // console.log("getPostComments: ", res);
         setComments(res[0].comments);
         setCommentsRefresh(false);
       });

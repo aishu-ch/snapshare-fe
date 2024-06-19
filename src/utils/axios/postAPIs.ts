@@ -8,9 +8,11 @@ const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
 
 axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
 
-export const getAllPosts = async () => {
+export const getExplorePosts = async (userName: string) => {
   try {
-    const data = await axios.get(`${baseURL}${postURL}/getallposts`);
+    const data = await axios.get(`${baseURL}${postURL}/exploreposts`, {
+      params: {userName: userName}
+    });
     return data.data;
   } catch (error) {
     console.log(error);
