@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <nav className="h-screen relative z-50 bg-white border-r border-gray-300 sticky top-0 w-[72px] md:w-fit">
         <h1 className="text-4xl px-12 mt-4 invisible md:visible">SnapShare</h1>
-        <NewPost isOpen={isOpen} setIsOpen={setIsOpen}/>
+
         <div className="text-xl px-4 mx-auto h-full pt-8">
           <Link
             to={"/"}
@@ -40,7 +40,10 @@ const Navbar = () => {
             <HomeSelected />
             <h1 className="invisible md:visible">Home</h1>
           </Link>
-          <ul className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer" onClick={() => setOpenSearch(!openSearch)}>
+          <ul
+            className="pl-2 flex gap-4 py-2 my-2 hover:bg-gray-50 hover:rounded-full hover:cursor-pointer"
+            onClick={() => setOpenSearch(!openSearch)}
+          >
             <SearchBtnIcon />
             <h1 className="invisible md:visible">Search</h1>
           </ul>
@@ -57,7 +60,10 @@ const Navbar = () => {
               Notifications
             </h1>
           </ul>
-          <ul className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full" onClick={() => setIsOpen(!isOpen)}>
+          <ul
+            className="pl-2 flex gap-4 py-2 my-2 cursor-pointer hover:bg-gray-50 hover:rounded-full"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <CreateUnselected />
             <h1 className="invisible md:visible">Create</h1>
           </ul>
@@ -71,15 +77,21 @@ const Navbar = () => {
             />
             <h1 className="invisible md:visible">{profile.userName}</h1>
           </Link>
-          <ul className="pl-2 flex gap-4 py-2 mb-auto cursor-pointer hover:bg-gray-50 hover:rounded-full relative" onClick={() => setOpenMoreMenu(!openMoreMenu)}>
+          <ul
+            className="pl-2 flex gap-4 py-2 mb-auto cursor-pointer hover:bg-gray-50 hover:rounded-full relative"
+            onClick={() => setOpenMoreMenu(!openMoreMenu)}
+          >
             <MoreModal isOpen={openMoreMenu} />
             <MenuIcon />
             <h1 className="invisible md:visible">More</h1>
           </ul>
         </div>
       </nav>
-      <div className="relative"> 
-        <Search isOpen={openSearch} setOpenSearch={setOpenSearch}/>
+      <div className="relative">
+        <Search isOpen={openSearch} setOpenSearch={setOpenSearch} />
+      </div>
+      <div className="relative">
+        <NewPost isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </>
   );
