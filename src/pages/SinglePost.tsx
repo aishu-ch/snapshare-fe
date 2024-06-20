@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import Post from "../components/Post";
@@ -23,7 +23,6 @@ const SinglePost = () => {
           <p>Loading</p>
         ) : (
           <>
-            {/* <button onClick={() => console.log(post)}>Test Button For Post Data</button> */}
             <Post isOnFeed={true} post={post} />
           </>
         )}

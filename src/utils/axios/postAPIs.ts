@@ -3,14 +3,15 @@ import axios from "axios";
 const baseURL = process.env.REACT_APP_BACKEND_BASE_URL;
 const postURL = process.env.REACT_APP_BACKEND_POST_URL;
 
-// @ts-ignore
 const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
 
 axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
 
-export const getAllPosts = async () => {
+export const getExplorePosts = async (userName: string) => {
   try {
-    const data = await axios.get(`${baseURL}${postURL}/getallposts`);
+    const data = await axios.get(`${baseURL}${postURL}/exploreposts`, {
+      params: { userName: userName },
+    });
     return data.data;
   } catch (error) {
     console.log(error);
@@ -87,7 +88,7 @@ export const editPost = async (postId: any, caption: string) => {
 };
 
 export const getPostById = async (postId: any) => {
-  console.log(postId)
+  console.log(postId);
   try {
     const getPost = await axios.get(`${baseURL}${postURL}/post/${postId}`);
     return getPost.data;

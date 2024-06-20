@@ -1,27 +1,34 @@
 import { useState, useEffect } from "react";
-import { getAllPosts } from "../utils/axios/postAPIs";
+import { getExplorePosts } from "../utils/axios/postAPIs";
 import Post from "../components/Post";
 import Navbar from "../components/Navbar";
+import { getProfileUsernameandProfilePic } from "../utils/axios/profileAPIs";
 
 export default function Explore() {
-    
-const [post, setPost] = useState([]);
+  const [userName, setUserName] = useState("");
 
-useEffect(() => {
-  getAllPosts().then((res) => {
-    setPost(res);
-    console.log(res);
-  });
-}, []);
+  const [post, setPost] = useState([]);
+
+  useEffect(() => {
+    getProfileUsernameandProfilePic()
+      .then((res) => {
+        console.log(res);
+        setUserName(res.userName);
+        getExplorePosts(res.userName).then((res) => {
+          setPost(res);
+        });
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="flex">
       <Navbar />
-    <div className="grid grid-cols-3">
-      {post.map((eachPost) => {
-        return <Post isOnFeed={false} post={eachPost} />;
-      })}
-    </div>
+      <div className="grid grid-cols-3">
+        {post.map((eachPost) => {
+          return <Post isOnFeed={false} post={eachPost} />;
+        })}
+      </div>
     </div>
   );
 }

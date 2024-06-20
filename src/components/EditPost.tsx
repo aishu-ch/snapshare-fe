@@ -14,12 +14,12 @@ const EditPost = ({ isOpen, postId, postCaption }: Props) => {
   const handleCaptionEdit = async () => {
     await editPost(postId, caption).then((res) => console.log(res));
     setCurrentTab("");
+    window.location.reload();
   };
 
   const handlePostDelete = async () => {
-    await deletePost(postId).then((res) =>
-      window.alert("Post Successfully Deleted")
-    );
+    await deletePost(postId);
+    window.location.replace("/");
   };
 
   return (

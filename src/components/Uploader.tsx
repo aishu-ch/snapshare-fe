@@ -10,17 +10,8 @@ const baseURL = process.env.REACT_APP_BACKEND_BASE_URL;
 const postURL = process.env.REACT_APP_BACKEND_POST_URL;
 
 const Uploader = ({ imgData, setAddCaption }: Props) => {
-  // @ts-ignore
-  const [fileInput, setFileInput] = useState("");
-  // @ts-ignore
-  const [previewSource, setPreviewSource] = useState("");
-  // @ts-ignore
-  const [selectedFile, setSelectedFile] = useState("");
 
-  // @ts-ignore
   const [image, setImage] = useState("");
-  // @ts-ignore
-  const [imageName, setImageName] = useState("");
 
   const handleImg = (e: any) => {
     console.log(e.target.files);
