@@ -36,7 +36,6 @@ export const loginUser = async (userName: string, password: string) => {
   try {
     await axios
       .post(`${baseURL}${userURL}/login`, {
-        // email: email,
         userName: userName,
         password: password,
       })
@@ -47,8 +46,6 @@ export const loginUser = async (userName: string, password: string) => {
         localStorage.setItem("token", JSON.stringify(token));
         window.location.reload();
         return response;
-
-        // return response
       });
   } catch (error) {
     console.log("This is the error", error);
@@ -92,7 +89,6 @@ export const searchUsers = async (searchTerm: string) => {
       searchTerm,
     });
     const results = response.data;
-    // Update the component state with the search results
     return results;
   } catch (error) {
     console.error(error);

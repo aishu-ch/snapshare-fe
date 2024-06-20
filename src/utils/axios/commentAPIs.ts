@@ -3,7 +3,6 @@ import axios from "axios";
 const baseURL = process.env.REACT_APP_BACKEND_BASE_URL;
 const commentURL = process.env.REACT_APP_BACKEND_COMMENT_URL;
 
-// @ts-ignore
 const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
 
 axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
