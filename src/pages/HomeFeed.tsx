@@ -6,6 +6,7 @@ import { checkIfValidToken } from "../utils/verifyToken";
 
 const HomeFeed = () => {
   const [post, setPost] = useState([]);
+  const [likesRefresh, setLikesRefresh] = useState(false);
 
   useEffect(() => {
     checkIfValidToken();
@@ -13,7 +14,8 @@ const HomeFeed = () => {
       setPost(res);
       console.log(res);
     });
-  }, [post]);
+    setLikesRefresh(false)
+  }, [likesRefresh]);
 
   return (
     <div className="flex">
@@ -22,7 +24,7 @@ const HomeFeed = () => {
         {post.map((eachPost) => {
           return (
             <div className="pt-4 pb-6">
-              <Post isOnFeed={true} post={eachPost} />
+              <Post isOnFeed={true} post={eachPost} setLikesRefresh={setLikesRefresh}/>
             </div>
           );
         })}

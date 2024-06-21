@@ -13,9 +13,10 @@ import { FavoriteSelected, FavoriteUnselected } from "./icons/Like";
 type Props = {
   isOnFeed: boolean;
   post: any;
+  setLikesRefresh: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Post = ({ isOnFeed, post }: Props) => {
+const Post = ({ isOnFeed, post, setLikesRefresh }: Props) => {
   const [profile, setProfile] = useState({
     userName: "",
     profilePic: "",
@@ -48,11 +49,12 @@ const Post = ({ isOnFeed, post }: Props) => {
 
   useEffect(() => {
     fetchData();
-  }, [commentsRefresh, isLiked]);
+  }, [commentsRefresh]);
 
   const likePost = async (id: string) => {
     const res = await likePostToggle(id);
     setIsLiked(res);
+    setLikesRefresh(true)
   };
   const navigate = useNavigate();
 

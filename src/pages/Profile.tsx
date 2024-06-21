@@ -33,6 +33,8 @@ const Profile = () => {
   const [followers, setFollowers] = useState([]);
   const [following, setFollowing] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [likesRefresh, setLikesRefresh] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -246,7 +248,7 @@ const Profile = () => {
         </div>
         <div className="grid grid-cols-3">
           {post.map((posts) => {
-            return <Post isOnFeed={false} post={posts} />;
+            return <Post isOnFeed={false} post={posts} setLikesRefresh={setLikesRefresh}/>;
           })}
         </div>
       </div>

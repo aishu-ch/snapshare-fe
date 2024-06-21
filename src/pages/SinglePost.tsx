@@ -8,12 +8,14 @@ const SinglePost = () => {
   const { postid } = useParams();
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [likesRefresh, setLikesRefresh] = useState(false);
 
   useEffect(() => {
     getPostById(postid)
-      .then((res: any) => setPost(res))
+      .then((res: any) => (post !== res ? setPost(res) : ""))
       .then((res) => setLoading(false));
-  }, [post]);
+    setLikesRefresh(false);
+  }, [likesRefresh]);
 
   return (
     <div className="flex">
@@ -23,7 +25,11 @@ const SinglePost = () => {
           <p>Loading</p>
         ) : (
           <>
-            <Post isOnFeed={true} post={post} />
+            <Post
+              isOnFeed={true}
+              post={post}
+              setLikesRefresh={setLikesRefresh}
+            />
           </>
         )}
       </div>

@@ -8,6 +8,7 @@ export default function Explore() {
   const [userName, setUserName] = useState("");
 
   const [post, setPost] = useState([]);
+  const [likesRefresh, setLikesRefresh] = useState(false);
 
   useEffect(() => {
     getProfileUsernameandProfilePic()
@@ -26,7 +27,7 @@ export default function Explore() {
       <Navbar />
       <div className="grid grid-cols-3">
         {post.map((eachPost) => {
-          return <Post isOnFeed={false} post={eachPost} />;
+          return <Post isOnFeed={false} post={eachPost} setLikesRefresh={setLikesRefresh}/>;
         })}
       </div>
     </div>
