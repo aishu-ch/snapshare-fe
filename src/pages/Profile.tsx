@@ -45,7 +45,25 @@ const Profile = () => {
         setLoading(false);
       })
       .catch((err) => console.log(err));
-  }, [username]);
+  }, [username, userData.isFollowingUser]);
+
+  const addFollower = async (username: any) => {
+    const res = await followUser(username);
+    console.log(res);
+    if (res?.status === 200) {
+      const newUserData = { ...userData, isFollowingUser: true };
+      setUserData(newUserData);
+    }
+  };
+
+  const removeFollower = async (username: any) => {
+    const res = await unfollowUser(username);
+    console.log(res);
+    if (res?.status === 200) {
+      const newUserData = { ...userData, isFollowingUser: false };
+      setUserData(newUserData);
+    }
+  };
 
   return (
     <div className="flex">
@@ -79,14 +97,14 @@ const Profile = () => {
                   {userData.isFollowingUser ? (
                     <button
                       className="border font-semibold px-12 rounded-sm text-black bg-white"
-                      onClick={() => unfollowUser(username)}
+                      onClick={() => removeFollower(username)}
                     >
                       Following
                     </button>
                   ) : (
                     <button
                       className="border font-semibold px-4 rounded-sm text-white bg-blue-500 hover:bg-blue-600"
-                      onClick={() => followUser(username)}
+                      onClick={() => addFollower(username)}
                     >
                       Follow
                     </button>

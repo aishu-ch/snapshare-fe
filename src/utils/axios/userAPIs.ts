@@ -65,9 +65,9 @@ export const getUserbyUsername = async (userName: any) => {
 
 export const followUser = async (userName: any) => {
   try {
-    await axios
+    const res = await axios
       .post(`${baseURL}${userURL}/${userName}/follow`)
-      .then((res) => window.alert(res));
+      return res
   } catch (error) {
     console.log(error);
   }
@@ -75,9 +75,9 @@ export const followUser = async (userName: any) => {
 
 export const unfollowUser = async (userName: any) => {
   try {
-    await axios
+    const res = await axios
       .post(`${baseURL}${userURL}/${userName}/unfollow`)
-      .then((res) => window.alert(res));
+      return res
   } catch (error) {
     console.log(error);
   }
