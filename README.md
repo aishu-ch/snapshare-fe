@@ -34,7 +34,7 @@ An app where you can
 - Favourite posts
 
 ## **Deployment**
-You can find the app [here](snap--share.vercel.app).
+You can find the app [here](https://snap--share.vercel.app).
 
 
 ### Link for backend repo is [here](https://github.com/aishu-ch/snapshare-be).
