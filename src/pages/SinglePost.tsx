@@ -13,7 +13,7 @@ const SinglePost = () => {
     getPostById(postid)
       .then((res: any) => setPost(res))
       .then((res) => setLoading(false));
-  }, []);
+  }, [post]);
 
   return (
     <div className="flex">

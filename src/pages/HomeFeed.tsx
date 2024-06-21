@@ -13,7 +13,7 @@ const HomeFeed = () => {
       setPost(res);
       console.log(res);
     });
-  }, []);
+  }, [post]);
 
   return (
     <div className="flex">

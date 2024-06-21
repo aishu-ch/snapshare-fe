@@ -48,7 +48,7 @@ const Post = ({ isOnFeed, post }: Props) => {
 
   useEffect(() => {
     fetchData();
-  }, [commentsRefresh]);
+  }, [commentsRefresh, isLiked]);
 
   const likePost = async (id: string) => {
     const res = await likePostToggle(id);
